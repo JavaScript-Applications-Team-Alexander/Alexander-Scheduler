@@ -71,7 +71,7 @@ var appointment = (function () {
                 var controllerDOMElement = $('.scheduleAddController');
                 var i = 0,
                     len = HEIGTH_OF_ELEMENT;
-
+		controllerDOMElement.show();
                 requestAnimationFrame(show);
                 function show() {
                     i += 5;
