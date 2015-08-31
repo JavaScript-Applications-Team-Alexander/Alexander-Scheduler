@@ -314,8 +314,8 @@ var appointment = (function () {
         $output.append(result);
         $('#controller-usual-event-button').on('click', showUsualEventAdding);
         $('#controller-unusual-event-button').on('click', showUnusualEventAdding);
-        controller.visualize();
     }
 
+    //controller.visualize();
     showInitialState();
 })();
