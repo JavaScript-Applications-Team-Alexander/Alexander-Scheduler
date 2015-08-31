@@ -7,7 +7,15 @@
 </head>
 <body>
 <div class="scheduleAddController"></div>
-<script src="Scripts/jquery-1.11.3.min.js"></script>
-<script src="Scripts/scheduleAddController.js"></script>
+<script src="bower_components/system.js/dist/system.js"></script>
+<script>
+    System.config({
+        transpiler: 'babel',
+        map: {
+            babel: 'node_modules/babel-core/browser.js'
+        }
+    });
+    //System.import('Scripts/main');
+</script>
 </body>
 </html>
