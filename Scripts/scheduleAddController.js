@@ -281,6 +281,7 @@ var appointment = (function () {
         var addAppointmentButton = $('<div>')
             .addClass('btn')
             .html('Add Appointment');
+            addAppointmentButton = addAppointmentButton.get(0);
 
         return scheduleAddController;
     });
