@@ -1,0 +1,220 @@
+$month-name-color: red;
+$previous-month-dates-color: grey;
+$next-month-dates-color: green;
+$week-day-names: blue;
+$calendar-innitial-width: 725px;
+$available-hours-innitial-width: 400px;
+$day-today-background-color: pink;
+$line-height-for-vertical-align: 6em;
+
+ul, div, li, button {
+    margin: 0;
+    padding: 0;
+    padding: 0;
+}
+
+//shrift open sans
+
+// days from previous and next month -> rgb(228, 228, 228); 
+
+//days from current month -> rgb(208, 208, 208);
+
+//calendar days background -> rgb(255,255,255);
+//current date circle background -> rgb(227, 242, 249); --> when day is selected goes white 255,255,255 and filled as the wrapper with  rgb(221, 221,221);
+
+
+
+// day names -> rgb(141, 168, 207);
+// day names background -> rgb(241, 243, 244);
+
+//month name -> rgb(53, 60, 64);
+//month name background -> rgb(229, 231, 233);
+
+// text 'available hours' -> rgb(85, 90, 95);
+
+// text chasove -> rgb(90, 85, 85);
+
+//cvqt na reshetkata na chasovete i na bordera na samite dati -> rgb(221, 221, 221);
+
+// buton zapazi sreshta -> cvqt na texta bql -> rgb(247, 251, 253);  - 1 ili 2 px border radius i cvqt na wrapper-a -> sin -> rgb(15, 148, 199);
+
+// back to current month text -> rgb(135, 150, 148);  a na hover stava rgb(80, 86, 90); poqvqva se kogato ne sme na current month 
+
+//ostavashto vreme ili kolko slota available za tozi chas ima -> cvqt rgb(174, 174, 172);
+
+
+            //maksimalni razmeri 
+//width 800px  height 575 px na celiq kalendar
+//na wrapper-a na meseca 800 x 65px
+//na wrapper-a kudeto pokazva dnite sa 800 x 40
+//wrapper-a na datite e 800 x 470 kato na red ima 7 koloni i 5 reda -> trqbva da se razdeli na vsqko kvadratche i da si obhvashta wrapper-a
+// priblizitelno edno kvadratche e okolo 113 na 96 
+// malkite bukvi na imeto na meseca sa visoki 12px
+// godinata e visoka  14px 
+// back to august e visoko 7px
+// chislata na datite sa visoki 15 px
+// diametura na selektiranoto chislo e 40 s 20px radius
+
+//pri klik na nqkoq data -> 
+// wrapper-a na prozorcite e 800 px x 582 za 8 svobodni chasa
+// kato vutreshniq v nego element, koito durji neshtata ima padding 17px - moje i 15 da sa
+// negovite razmeri - na vutreshniq element sa 769 x 551px
+
+//texta 'available appointments' e visok 13px -> moje i 14 da e /na malkite bukvi/
+// kvadratcheto da si zapazish chas e 133px x 35px
+// chasa e visok 12px boldnat a 'pm/am koito nqmam sa visoki 8px
+// otvorenite slotove sa visoki 10px;
+// bordera e 1px na reshetkata
+// strelkite za risuvane sa s razmeri 14 x 27px
+
+
+
+// 3 rezolucii
+
+
+// za rezolucii pri 991px shirina na ekrana se smalqva
+
+// pri 767 se smalqva oshte
+
+// pri 479 se smalqva oshte
+
+
+
+
+
+.agenda-calendar-special {
+
+
+    .agenda-calendar-wrapper {
+        width: $calendar-innitial-width;
+        margin: 0 auto;
+
+        #render-previous-calendar-month-button {
+            float: left;
+            position: relative;
+            left: 60px;
+            top: 20px;
+        }
+
+        #render-next-calendar-month-button {
+            float: right;
+            position: relative;
+            left: -80px;
+            top: 20px;
+        }
+
+
+        #current-calendar-month-name {
+            color: $month-name-color;
+            text-align: center;
+        }
+
+        #calendar-week-day-names-list {
+            margin-left: 17px;
+            margin-top: 25px;
+
+            .week-day-names {
+                color: $week-day-names;
+                display: inline;
+                font-size: 1.4em;
+                margin-right: 29px;
+            }
+
+            li.sunday {
+            }
+
+            li.monday {
+            }
+
+            li.tuesday {
+            }
+
+            li.wednesday {
+            }
+
+            li.thursday {
+            }
+
+            li.friday {
+            }
+
+            li.saturday {
+            }
+        }
+
+        #calendar-date-container {
+            margin-top: 15px;
+            line-height: $line-height-for-vertical-align;
+
+            .daily-free-hours-display-wrapper {
+                display: block;
+
+
+                .daily-free-hours-display-list {
+                    list-style-type: none;
+                    text-align: center;
+                    width: $calendar-innitial-width - 4;
+
+                    .user-current-day-free-time {
+                        margin: 0 auto;
+                        width: $available-hours-innitial-width;
+                        border: 1px solid black;
+                        border-radius: 20px;
+                        color: red;
+                        font-size: 1.2em;
+                        font-weight: bold;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .agenda-calendar-day-value {
+                cursor: pointer;
+                display: inline-block;
+                font-size: 2.3em;
+                vertical-align: middle;
+                width: 4.2em;
+                height: 4em;
+                text-align: center;
+                vertical-align: middle;
+                font-size: 1.5em;
+                border: 1px solid black;
+            }
+
+            .agenda-calendar-day-value.day-today {
+                background-color: $day-today-background-color;
+            }
+
+            .agenda-calendar-day-value.selected-date-item {
+                background-color: purple;
+            }
+
+            .agenda-calendar-day-value.previously-selected-item {
+                background-color: rosybrown;
+            }
+
+            .display-inline-block-element {
+            }
+
+            .agenda-calendar-day-value:hover {
+                background-color: yellow;
+            }
+
+            .agenda-calendar-day-value.selected-date {
+                background-color: orangered;
+            }
+
+            .agenda-calendar-day-value {
+                background-color: white;
+            }
+
+            .from-previous-month {
+                background-color: $previous-month-dates-color;
+            }
+
+            .from-next-month {
+                background-color: $next-month-dates-color;
+            }
+        }
+    }
+}
