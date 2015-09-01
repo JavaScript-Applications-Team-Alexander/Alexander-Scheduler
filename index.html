@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-  <link rel="stylesheet" type="text/css" href="Styles/main.css">
+    <link rel="stylesheet" type="text/css" href="Styles/main.css">
 </head>
 <body>
 <div class="scheduleAddController"></div>
@@ -11,8 +11,14 @@
 <script>
     System.config({
         transpiler: 'babel',
+        babelOptions: {
+            "optional": [
+                "runtime"
+            ]
+        },
         map: {
-            babel: 'node_modules/babel-core/browser.js'
+            babel: 'node_modules/babel-core/browser.js',
+            jquery: 'bower_components/jquery/dist/jquery.js'
         }
     });
     System.import('Scripts/main.js');
