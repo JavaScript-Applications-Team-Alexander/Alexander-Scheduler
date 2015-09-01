@@ -1,2 +1,4 @@
 // TODO: Add schedule controller when implemented.
-import 'jquery'
+import controller from 'Scripts/scheduleAddController.js';
+
+controller.init('.cool');
