@@ -160,11 +160,21 @@ function getDescriptionInput() {
 }
 
 function getAddButton() {
-    var addAppointmentButton = $('<div>')
+    var addAppointmentButton = $('<div/>')
         .addClass('btn')
         .html('Add Appointment');
     addAppointmentButton = addAppointmentButton.get(0);
     return addAppointmentButton;
+}
+
+function getCloseButton() {
+    var closeButton = $('<div/>', {
+        id: 'controller-close-button'
+    })
+        .addClass('btn')
+        .html('x')
+        .get(0);
+    return closeButton;
 }
 
 export default {
@@ -177,5 +187,6 @@ export default {
     getStartHourInput,
     getEndHourInput,
     getDescriptionInput,
-    getAddButton
+    getAddButton,
+    getCloseButton
 }

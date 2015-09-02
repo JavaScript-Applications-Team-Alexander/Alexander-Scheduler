@@ -9,6 +9,12 @@ function init(selector){
     showInitialState();
 }
 
+function disposeOf(){
+    var $controller = $('.scheduleAddController');
+    hide();
+    $controller.parent().get(0).removeChild($controller.get(0));
+}
+
 // TODO: Rethink the visualize/hide part
 function visualize() {
     var controllerDOMElement = $('.scheduleAddController');
@@ -51,6 +57,7 @@ function renderUnusualEventAdding() {
     result.appendChild(DOMElements.getEndHourInput());
     result.appendChild(DOMElements.getDescriptionInput());
     result.appendChild(DOMElements.getAddButton());
+    result.appendChild(DOMElements.getCloseButton());
     return result;
 }
 
@@ -60,6 +67,7 @@ function renderUsualEventAdding() {
     result.appendChild(DOMElements.getAppointmentListInput());
     result.appendChild(DOMElements.getDurationInput());
     result.appendChild(DOMElements.getAddButton());
+    result.appendChild(DOMElements.getCloseButton());
     return result;
 }
 
@@ -67,6 +75,7 @@ function renderInitialState() {
     var result = document.createDocumentFragment();
     result.appendChild(DOMElements.getUsualButton());
     result.appendChild(DOMElements.getUnusualButton());
+    result.appendChild(DOMElements.getCloseButton());
     return result;
 }
 
@@ -77,6 +86,7 @@ function showUnusualEventAdding() {
     $output.empty();
     $output.append(result);
     $('#controller-back-button').on('click', showInitialState);
+    $('#controller-close-button').on('click', disposeOf);
 }
 
 function showUsualEventAdding() {
@@ -86,6 +96,7 @@ function showUsualEventAdding() {
     $output.empty();
     $output.append(result);
     $('#controller-back-button').on('click', showInitialState);
+    $('#controller-close-button').on('click', disposeOf);
 }
 
 function showInitialState() {
@@ -96,6 +107,7 @@ function showInitialState() {
     $output.append(result);
     $('#controller-usual-event-button').on('click', showUsualEventAdding);
     $('#controller-unusual-event-button').on('click', showUnusualEventAdding);
+    $('#controller-close-button').on('click', disposeOf);
 }
 
-export default {init,visualize,hide}
+export default {init,disposeOf,visualize,hide}
