@@ -9,7 +9,7 @@ function init(selector){
     showInitialState();
 }
 
-function disposeOf(){
+function dispose(){
     var $controller = $('.scheduleAddController');
     hide();
     $controller.parent().get(0).removeChild($controller.get(0));
@@ -86,7 +86,7 @@ function showUnusualEventAdding() {
     $output.empty();
     $output.append(result);
     $('#controller-back-button').on('click', showInitialState);
-    $('#controller-close-button').on('click', disposeOf);
+    $('#controller-close-button').on('click', dispose);
 }
 
 function showUsualEventAdding() {
@@ -96,7 +96,7 @@ function showUsualEventAdding() {
     $output.empty();
     $output.append(result);
     $('#controller-back-button').on('click', showInitialState);
-    $('#controller-close-button').on('click', disposeOf);
+    $('#controller-close-button').on('click', dispose);
 }
 
 function showInitialState() {
@@ -107,7 +107,7 @@ function showInitialState() {
     $output.append(result);
     $('#controller-usual-event-button').on('click', showUsualEventAdding);
     $('#controller-unusual-event-button').on('click', showUnusualEventAdding);
-    $('#controller-close-button').on('click', disposeOf);
+    $('#controller-close-button').on('click', dispose);
 }
 
-export default {init,disposeOf,visualize,hide}
+export default {init,dispose,visualize,hide}
