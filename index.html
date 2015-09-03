@@ -3,18 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="node_modules/mocha/mocha.css">
     <link rel="stylesheet" type="text/css" href="Styles/main.css">
 </head>
 <body>
-<script src="bower_components/jquery/dist/jquery.js"></script>
-<script src="Scripts/scheduleAddControllerDOMElements.js"></script>
+<div id="test-field"></div>
+<div id="mocha"></div>
+<script src="bower_components/system.js/dist/system.js"></script>
 <script>
-    console.log(scheduleAddControllerDOMElements);
-    console.log(scheduleAddControllerDOMElements.getAddButton());
+    System.config({
+        transpiler: 'babel',
+        babelOptions: {
+            "optional": [
+                "runtime"
+            ]
+        },
+        map: {
+            babel: 'node_modules/babel-core/browser.js',
+            jquery: '../bower_components/jquery/dist/jquery.js',
+            controller: '../Scripts/scheduleAddController.js'
+			<!--This should be reworked at some point-->
+        }
+    });
+    System.import('Scripts/main.js');
 </script>
-<script src="Scripts/scheduleAddController.js"></script>
+<script src="node_modules/mocha/mocha.js"></script>
+<script src="node_modules/chai/chai.js"></script>
 <script>
-    console.log(scheduleAddController);
+    mocha.setup('bdd');
+    var expect = chai.expect;
 </script>
+
 </body>
 </html>
