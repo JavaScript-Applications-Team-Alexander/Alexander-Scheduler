@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../node_modules/mocha/mocha.css">
+    <link rel="stylesheet" type="text/css" href="../Styles/main.css">
+</head>
+<body>
+<div id="test-field"></div>
+<div id="mocha"></div>
+<script src="../bower_components/system.js/dist/system.js"></script>
+<script>
+    System.config({
+        transpiler: 'babel',
+        babelOptions: {
+            "optional": [
+                "runtime"
+            ]
+        },
+        map: {
+            babel: '../node_modules/babel-core/browser.js',
+            jquery: '../../bower_components/jquery/dist/jquery.js',
+            controller: '../../Scripts/scheduleAddController.js'
+
+        }
+    });
+    System.import('Scripts/main.js');
+</script>
+<script src="../node_modules/mocha/mocha.js"></script>
+<script src="../node_modules/chai/chai.js"></script>
+<script>
+    mocha.setup('bdd');
+    var expect = chai.expect;
+</script>
+
+<script>
+    function sum(a, b) {
+        return (a + b) | 0;
+    }
+</script>
+
+
+
+<script>
+
+</script>
+
+</body>
+</html>
