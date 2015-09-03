@@ -10,8 +10,8 @@
     }
 });
 window.onload =
-    requirejs(['database', '../js/jquery-1.11.1.min', '../bootstrap/js/bootstrap.min', '../js/jquery.backstretch.min', '../js/scripts'],
-        function (Database) {
+    requirejs(['database', 'calendar', '../js/jquery-1.11.1.min', '../bootstrap/js/bootstrap.min', '../js/jquery.backstretch.min', '../js/scripts'],
+        function (Database, Calendar) {
 
             // STATE TEMPLATES
             var loginStateFilePath = 'assets/templates/login-state.txt';
@@ -94,6 +94,10 @@ window.onload =
                             $content.empty();
                             $content.load(calendarStateFilePath, function () {
                                 loadCalendarSelectors();
+                                var calendar = Object.create(Calendar).init();
+                                console.log(calendar);
+                                calendar.renderCalendar(calendar);
+
                                 var date = {
                                     day: '13',
                                     month: 'August',

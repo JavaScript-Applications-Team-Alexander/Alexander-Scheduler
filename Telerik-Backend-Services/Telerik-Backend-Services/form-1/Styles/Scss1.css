@@ -1,0 +1,86 @@
+.agenda-calendar-special ul, .agenda-calendar-special div, .agenda-calendar-special li, .agenda-calendar-special button, .agenda-calendar-special a, .agenda-calendar-special h1, .agenda-calendar-special h2, .agenda-calendar-special h3 {
+  margin: 0;
+  padding: 0;
+  padding: 0; }
+.agenda-calendar-special .agenda-calendar-wrapper {
+  display: block;
+  margin: 0 auto;
+  font-family: 'open-sans', Arial, sans-serif;
+  width: 798px;
+  height: 575px; }
+  .agenda-calendar-special .agenda-calendar-wrapper #render-previous-calendar-month-button {
+    float: left;
+    position: relative;
+    left: 60px;
+    top: 10px; }
+  .agenda-calendar-special .agenda-calendar-wrapper #render-next-calendar-month-button {
+    float: right;
+    position: relative;
+    left: -80px;
+    top: 10px; }
+  .agenda-calendar-special .agenda-calendar-wrapper #current-calendar-month-name {
+    display: block;
+    height: 65px;
+    color: #353c40;
+    font-size: 14px;
+    background-color: #e5e7e9;
+    text-align: center; }
+  .agenda-calendar-special .agenda-calendar-wrapper #calendar-week-day-names-list {
+    display: block;
+    line-height: 40px;
+    background-color: #f1f3f4;
+    height: 40px; }
+    .agenda-calendar-special .agenda-calendar-wrapper #calendar-week-day-names-list .week-day-names {
+      display: inline-block;
+      text-align: center;
+      font-size: 14px;
+      color: #8da8cf;
+      width: 114px; }
+  .agenda-calendar-special .agenda-calendar-wrapper #calendar-date-container {
+    line-height: 5.7em; }
+    .agenda-calendar-special .agenda-calendar-wrapper #calendar-date-container .from-previous-month {
+      color: #c8c8c8; }
+    .agenda-calendar-special .agenda-calendar-wrapper #calendar-date-container .from-next-month {
+      color: #c8c8c8; }
+    .agenda-calendar-special .agenda-calendar-wrapper #calendar-date-container .agenda-calendar-day-value {
+      cursor: pointer;
+      display: inline-block;
+      vertical-align: middle;
+      text-align: center;
+      vertical-align: middle;
+      background-color: white;
+      width: 114px;
+      height: 94px;
+      font-size: 15px;
+      border-top: 1px solid #dddddd; }
+    .agenda-calendar-special .agenda-calendar-wrapper #calendar-date-container .agenda-calendar-day-value.day-today {
+      background-color: #e3f2f9; }
+    .agenda-calendar-special .agenda-calendar-wrapper #calendar-date-container .agenda-calendar-day-value.selected-date-item {
+      color: white; }
+    .agenda-calendar-special .agenda-calendar-wrapper #calendar-date-container .agenda-calendar-day-value.previously-selected-item {
+      background-color: rosybrown; }
+    .agenda-calendar-special .agenda-calendar-wrapper #calendar-date-container .display-inline-block-element {
+      display: inline-block; }
+    .agenda-calendar-special .agenda-calendar-wrapper #calendar-date-container .agenda-calendar-day-value:hover {
+      background-color: yellow; }
+    .agenda-calendar-special .agenda-calendar-wrapper #calendar-date-container .agenda-calendar-day-value.selected-date {
+      background-color: orangered; }
+    .agenda-calendar-special .agenda-calendar-wrapper #calendar-date-container .agenda-calendar-day-value {
+      background-color: white; }
+    .agenda-calendar-special .agenda-calendar-wrapper #calendar-date-container .daily-free-hours-display-wrapper {
+      display: block; }
+      .agenda-calendar-special .agenda-calendar-wrapper #calendar-date-container .daily-free-hours-display-wrapper .daily-free-hours-display-list {
+        background-color: #dddddd;
+        padding: 16px; }
+        .agenda-calendar-special .agenda-calendar-wrapper #calendar-date-container .daily-free-hours-display-wrapper .daily-free-hours-display-list .user-current-day-free-time {
+          margin: 0 auto;
+          background-color: white;
+          height: 75px;
+          font-size: 12px;
+          color: #5a5555;
+          border-top: 1px solid #dddddd;
+          position: relative;
+          font-weight: bold;
+          cursor: pointer; }
+
+/*# sourceMappingURL=Scss1.css.map */

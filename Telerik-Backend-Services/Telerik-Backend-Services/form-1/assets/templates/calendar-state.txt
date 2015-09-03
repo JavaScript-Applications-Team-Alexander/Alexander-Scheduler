@@ -6,3 +6,4 @@
 
 <div><button class="btn" id="request-schedule">Request Schedule</button></div>
 <div><button class="btn" id="request-appointments">Request Appointments</button></div>
+<div class="agenda-calendar-special"></div>
