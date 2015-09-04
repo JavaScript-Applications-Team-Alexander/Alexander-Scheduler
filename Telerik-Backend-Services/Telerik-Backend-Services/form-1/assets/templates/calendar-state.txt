@@ -1,9 +1,16 @@
+<div id="x-appointments-controller"></div>
+
 <div class="row">
     <div class="col-sm-8 col-sm-offset-2 text">
-        <h1><strong>Smart Scheduler</strong>Calendar View</h1>
+        <h1><strong>Smart Scheduler </strong> Calendar View</h1>
+    </div>
+	<div class="col-sm-8 col-sm-offset-2 text">
+        <h2 id="welcome-user"></h2>
     </div>
 </div>
 
-<div><button class="btn" id="request-schedule">Request Schedule</button></div>
-<div><button class="btn" id="request-appointments">Request Appointments</button></div>
 <div class="agenda-calendar-special"></div>
+ <div class="row-fluid" id="credentials">
+	<div class="span text-center" id="credentials-text">Created By Team "Alexander" - Telerik Academy 2015-2016 </div>
+	<div class="span text-center" id="credentials-text2">Powered by Bootstrap, jQuery & Telerik Backend Services </div>
+</div>

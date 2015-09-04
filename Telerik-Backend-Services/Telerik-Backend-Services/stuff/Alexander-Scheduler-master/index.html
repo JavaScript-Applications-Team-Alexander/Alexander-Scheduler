@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="Styles/main.css">
+</head>
+<body>
+<div class="cool"></div>
+<script src="bower_components/system.js/dist/system.js"></script>
+<script>
+    System.config({
+        transpiler: 'babel',
+        babelOptions: {
+            "optional": [
+                "runtime"
+            ]
+        },
+        map: {
+            babel: 'node_modules/babel-core/browser.js',
+            jquery: 'bower_components/jquery/dist/jquery.js'
+        }
+    });
+    System.import('Scripts/main.js');
+</script>
+</body>
+</html>

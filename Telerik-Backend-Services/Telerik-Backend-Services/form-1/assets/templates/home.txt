@@ -1,0 +1,2 @@
+﻿<button class="btn" id="go-to-calendar">View Calendar</button><br />
+<button class="btn" id="go-to-login">Login</button>

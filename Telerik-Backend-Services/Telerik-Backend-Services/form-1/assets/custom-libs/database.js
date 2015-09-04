@@ -19,7 +19,8 @@ define(['../../bower_components/everlive/min/everlive.all.min'], function (Everl
             createUser: createUser,
             scheduleAppointment: scheduleAppointment,
             getScheduledAppointmentsForCalendarRenderer: getScheduledAppointmentsForCalendarRenderer,
-            getScheduledAppointmentsForVisualisationControl: getScheduledAppointmentsForVisualisationControl
+            getScheduledAppointmentsForVisualisationControl: getScheduledAppointmentsForVisualisationControl,
+            welcomeCurrentUser: welcomeCurrentUser
         };
 
         function createUser(accountName, accountPassword, email, displayName, $content,loginStateFilePath, loadLoginSelectors, attachLoginEventHandlers) {
@@ -47,6 +48,14 @@ define(['../../bower_components/everlive/min/everlive.all.min'], function (Everl
                 },
                 function (error) {
                     alert(JSON.stringify(error));
+                });
+        }
+
+        function welcomeCurrentUser($selector) {
+            el.Users.currentUser()
+                .then(function (userData) {
+                    var currentUser = userData.result.DisplayName;
+                    $selector.text('Welcome, ' + currentUser + '!')
                 });
         }
 
@@ -139,46 +148,47 @@ define(['../../bower_components/everlive/min/everlive.all.min'], function (Everl
         }
 
         function getScheduledAppointmentsForCalendarRenderer(date) {
-            alert('Inside activities');
-            el.Users.currentUser()
-                .then(function (userData) {
-                    var scheduleData,
-                        scheduledActivities = [],
-                        currentUserData = userData.result,
-                        owner = currentUserData.DisplayName;
+            return new Promise(function(resolve, reject) {
+                el.Users.currentUser()
+                    .then(function(userData) {
+                        var scheduleData,
+                            scheduledActivities = [],
+                            currentUserData = userData.result,
+                            owner = currentUserData.DisplayName;
 
-                    // Retrieve scheduled activities
-                    var filterScheduledHours = new Everlive.Query();
-                    filterScheduledHours.where().and()
-                        .eq('OwnedBy', owner)
-                        .eq('Day', date.day)
-                        .eq('Month', date.month)
-                        .eq('Year', date.year);
+                        // Retrieve scheduled activities
+                        var filterScheduledHours = new Everlive.Query();
+                        filterScheduledHours.where().and()
+                            .eq('OwnedBy', owner)
+                            .eq('Day', date.day)
+                            .eq('Month', date.month)
+                            .eq('Year', date.year);
 
-                    var schedule = el.data('Appointment');
-                    schedule.get(filterScheduledHours)
-                        .then(function (data) {
-                            for (var i = 0, len = data.result.length; i < len; i += 1) {
-                                scheduledActivities.push({
-                                    from: data.result[i].StartingAt,
-                                    duration: data.result[i].Duration
+                        var schedule = el.data('Appointment');
+                        schedule.get(filterScheduledHours)
+                            .then(function(data) {
+                                    for (var i = 0, len = data.result.length; i < len; i += 1) {
+                                        scheduledActivities.push({
+                                            from: data.result[i].StartingAt,
+                                            duration: data.result[i].Duration
+                                        });
+                                    }
+                                },
+                                function(error) {
+                                    alert(JSON.stringify(error));
                                 });
-                            }
-                        },
-                        function (error) {
-                            alert(JSON.stringify(error));
-                        });
 
-                    // Finalize the export object
-                    scheduleData = {
-                        availableFrom: currentUserData.AvailableFrom,
-                        availableTo: currentUserData.AvailableTo,
-                        scheduledActivities: scheduledActivities
-                    };
+                        // Finalize the export object
+                        scheduleData = {
+                            availableFrom: currentUserData.AvailableFrom,
+                            availableTo: currentUserData.AvailableTo,
+                            scheduledActivities: scheduledActivities
+                        }
 
-                    // Entry point for the calendar renderer.
-                    console.log(scheduleData);
-                });
+                        console.log(scheduleData);
+                        resolve(scheduleData);
+                    });
+            });
         }
 
         return database;

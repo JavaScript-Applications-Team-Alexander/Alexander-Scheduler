@@ -110,4 +110,4 @@ function showInitialState() {
     $('#controller-close-button').on('click', dispose);
 }
 
-export default {init,dispose,visualize,hide}
+export default {init,dispose}

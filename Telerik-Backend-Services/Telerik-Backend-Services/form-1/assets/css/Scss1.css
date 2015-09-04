@@ -54,33 +54,25 @@
       font-size: 15px;
       border-top: 1px solid #dddddd; }
     .agenda-calendar-special .agenda-calendar-wrapper #calendar-date-container .agenda-calendar-day-value.day-today {
-      background-color: #e3f2f9; }
-    .agenda-calendar-special .agenda-calendar-wrapper #calendar-date-container .agenda-calendar-day-value.selected-date-item {
-      color: white; }
-    .agenda-calendar-special .agenda-calendar-wrapper #calendar-date-container .agenda-calendar-day-value.previously-selected-item {
-      background-color: rosybrown; }
+      background-color: #c8c8c8; }
     .agenda-calendar-special .agenda-calendar-wrapper #calendar-date-container .display-inline-block-element {
       display: inline-block; }
     .agenda-calendar-special .agenda-calendar-wrapper #calendar-date-container .agenda-calendar-day-value:hover {
-      background-color: yellow; }
-    .agenda-calendar-special .agenda-calendar-wrapper #calendar-date-container .agenda-calendar-day-value.selected-date {
-      background-color: orangered; }
-    .agenda-calendar-special .agenda-calendar-wrapper #calendar-date-container .agenda-calendar-day-value {
-      background-color: white; }
+      background-color: #e3f2f9; }
+   
     .agenda-calendar-special .agenda-calendar-wrapper #calendar-date-container .daily-free-hours-display-wrapper {
       display: block; }
       .agenda-calendar-special .agenda-calendar-wrapper #calendar-date-container .daily-free-hours-display-wrapper .daily-free-hours-display-list {
         background-color: #dddddd;
-        padding: 16px; }
+        padding: 2px; }
         .agenda-calendar-special .agenda-calendar-wrapper #calendar-date-container .daily-free-hours-display-wrapper .daily-free-hours-display-list .user-current-day-free-time {
           margin: 0 auto;
           background-color: white;
-          height: 75px;
+          height: 76px;
           font-size: 12px;
           color: #5a5555;
           border-top: 1px solid #dddddd;
           position: relative;
           font-weight: bold;
           cursor: pointer; }
-
 /*# sourceMappingURL=Scss1.css.map */
